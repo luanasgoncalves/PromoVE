@@ -28,11 +28,11 @@ button {
   margin-right: 10px;
   padding: 8px 16px;
   border: none;
-  background: #eee;
+  background:#007BFF;
   cursor: pointer;
 }
 button.active {
-  background-color: #007BFF;
+  background-color: rgb(57, 57, 245);
   color: white;
 }
 </style>
