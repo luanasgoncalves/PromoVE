@@ -21,7 +21,7 @@ function setCategory(newCategory) {
 <style>
 body {
   font-family: sans-serif;
-  margin: 0;
+  margin: 50;
   background: #0000;
 }
 .app {

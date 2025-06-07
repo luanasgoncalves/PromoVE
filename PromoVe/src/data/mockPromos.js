@@ -1,30 +1,30 @@
 export const promos = [
   {
     id: 1,
-    title: 'Smartphone Galaxy S21',
-    price: '2.699,10',
-    oldPrice: '4.999,00',
-    store: 'Americanas',
+    title: 'Smartphone Galaxy S24',
+    price: '3.536,14',
+    oldPrice: '4.149,00',
+    store: 'Amazon',
     category: 'eletrônicos',
-    link: 'https://www.magazineluiza.com.br/smartphone-samsung-galaxy-s24-fe-128gb-grafite-5g-8gb-ram-67-cam-tripla-selfie-10mp/p/240010800/te/s24f/?&seller_id=magazineluiza&utm_source=google&utm_medium=cpc&utm_term=78757&utm_campaign=google_eco_per_ven_pla_all_apo_1p_adv-funnel-trafego-csp-v2&utm_content=&partner_id=78757&gclsrc=aw.ds&gad_source=1&gad_campaignid=22150930997&gbraid=0AAAAAD4zZmQlg3RL7R6_Vto3gaLbAC22G&gclid=CjwKCAjwruXBBhArEiwACBRtHSZOAO_3z7VVUihfYAtwWZGUOiJvs3u16FMeL5tIK9cOLNsWTsakkxoCagkQAvD_BwE',
-    image: 'https://a-static.mlcdn.com.br/800x560/smartphone-samsung-galaxy-s24-fe-128gb-grafite-5g-8gb-ram-67-cam-tripla-selfie-10mp/magazineluiza/240010800/cb7f1ca382009d6cca85a254ca69a9ae.jpg'
+    link: 'https://www.amazon.com.br/Smartphone-Samsung-Galaxy-Selfie-1-120Hz/dp/B0CQD9W98F/ref=asc_df_B0CQD9W98F?mcid=cfd4f6784098375aaf7b7805ba65f337&tag=googleshopp00-20&linkCode=df0&hvadid=709964503130&hvpos=&hvnetw=g&hvrand=11212854945878199727&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9214333&hvtargid=pla-2282134039653&language=pt_BR&gad_source=1&th=1',
+    image: 'https://m.media-amazon.com/images/I/71KZXGAb5fL.__AC_SX300_SY300_QL70_ML2_.jpg'
   },
   {
     id: 2,
     title: 'Camisa Polo Masculina',
-    price: '89,90',
-    oldPrice: '129,90',
-    store: 'Renner',
+    price: '79,99',
+    oldPrice: '139,99',
+    store: 'Hering',
     category: 'roupas',
-    link: 'https://www.lojasrenner.com.br/produto/78910',
-    image: 'https://torratorra.vtexassets.com/arquivos/ids/2112327/28212001066136.jpg?v=638745770039470000'
+    link: 'https://www.hering.com.br/camisa-polo-masculina-manga-curta-com-bordado-3m7x1asn/p?idsku=185827&gad_source=1&gad_campaignid=22510303080&gbraid=0AAAAADxX2JyyBoWyQH0KAvF3MTGI0rtlI&gclid=CjwKCAjwo4rCBhAbEiwAxhJlCSwEXNEUzqTgUkQBOxlClb0mEVpsYkEcWG2E6PCa_DXprooEFaCIIhoCZ4AQAvD_BwE',
+    image: 'https://www.hering.com.br/_next/image?url=https%3A%2F%2Fhering.vtexassets.com%2Farquivos%2Fids%2F3853523-880-auto&w=1280&q=100'
   },
   {
     id: 3,
     title: 'Geladeira Inox 400L',
     price: '2.999,00',
     oldPrice: '3.699,00',
-    store: 'Magazine Luiza',
+    store: 'Cônsul',
     category: 'eletrodomésticos',
     link: 'https://www.consul.com.br/geladeira-consul-frost-free-duplex-386-litros-com-altura-flex-cor-inox-crm44ak/p?idsku=326031156&gad_source=1&gad_campaignid=21493571490&gbraid=0AAAAADJ0EzDVjyHFyHXnqnaXyiBN16SdM&gclid=CjwKCAjwruXBBhArEiwACBRtHUuG8feOPuPvCeK733fYSJvZJG9znUk1cMnk0EwHPSshqmYFHThuGBoCoTwQAvD_BwE',
     image: 'https://consul.vtexassets.com/arquivos/ids/250371-800-800?v=638745551015330000&width=800&height=800&aspect=true'

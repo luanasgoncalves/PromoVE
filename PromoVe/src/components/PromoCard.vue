@@ -22,19 +22,26 @@ function goToLink() {
 
 <style scoped>
 .promo-card {
-  background: white;
+  width: 250px; 
+  background: #fff;
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: transform 0.2s ease;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .promo-card:hover {
   transform: scale(1.02);
 }
+
 img {
-  max-width: 100%;
+  width: 100%;
+  height: 300px; 
+  object-fit: cover; 
   border-radius: 8px;
+  margin-bottom: 10px;
 }
 .price {
   display: flex;
