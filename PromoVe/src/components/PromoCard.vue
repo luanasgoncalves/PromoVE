@@ -1,12 +1,12 @@
 <template>
   <div class="promo-card" @click="goToLink">
-    <img :src="promo.image" alt="Produto" />
-    <h3>{{ promo.title }}</h3>
-    <p class="price">
-      <span class="new">R$ {{ promo.price }}</span>
-      <span class="old">R$ {{ promo.oldPrice }}</span>
+    <img :src="promo.imagem" alt="Produto" />
+    <h3>{{ promo.nomeProduto }}</h3>
+    <p class="preco">
+      <span class="new">R$ {{ promo.preco }}</span>
+      <span class="old">R$ {{ promo.precoAntigo }}</span>
     </p>
-    <p class="store">{{ promo.store }}</p>
+    <p class="loja">{{ promo.loja }}</p>
   </div>
 </template>
 
@@ -43,20 +43,20 @@ img {
   border-radius: 8px;
   margin-bottom: 10px;
 }
-.price {
+.preco {
   display: flex;
   gap: 10px;
   align-items: center;
 }
-.price .old {
+.precoAntigo .old {
   text-decoration: line-through;
   color: gray;
 }
-.price .new {
+.preco .new {
   color: green;
   font-weight: bold;
 }
-.store {
+.loja {
   font-size: 0.9em;
   color: #777;
 }

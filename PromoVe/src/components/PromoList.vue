@@ -9,17 +9,31 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 import PromoCard from './PromoCard.vue'
-import { promos } from '../data/mockPromos.js'
 
 const props = defineProps({
-  category: String
+  categoria: String
 })
 
+const allPromos = ref([])
+
+const fetchPromos = async () => {
+  try {
+    const res = await fetch('http://localhost:3001/promos')
+    if (!res.ok) throw new Error('Erro na requisição')
+    const data = await res.json()
+    allPromos.value = data
+  } catch (err) {
+    console.error('Erro ao buscar dados:', err)
+  }
+}
+
+
+onMounted(fetchPromos)
 const filteredPromos = computed(() => {
-  if (props.category === 'todos') return promos
-  return promos.filter(p => p.category === props.category)
+  if (!props.categoria || props.categoria === 'todos') return allPromos.value
+  return allPromos.value.filter(p => p.categoria === props.categoria)
 })
 </script>
 

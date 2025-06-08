@@ -1,8 +1,8 @@
 <template>
   <div class="app">
     <h1>PromoVe</h1>
-    <CategoryFilter :selectedCategory="selectedCategory" @update="setCategory" />
-    <PromoList :category="selectedCategory" />
+    <CategoryFilter :categoriaSelecionada="categoriaSelecionada" @update="setCategory" />
+    <PromoList :categoria="categoriaSelecionada" />
   </div>
 </template>
 
@@ -11,10 +11,10 @@ import { ref } from 'vue'
 import CategoryFilter from './components/CategoryFilter.vue'
 import PromoList from './components/PromoList.vue'
 
-const selectedCategory = ref('todos')
+const categoriaSelecionada = ref('todos')
 
 function setCategory(newCategory) {
-  selectedCategory.value = newCategory
+  categoriaSelecionada.value = newCategory
 }
 </script>
 
@@ -29,4 +29,5 @@ body {
   margin: auto;
   padding: 20px;
 }
+
 </style>
