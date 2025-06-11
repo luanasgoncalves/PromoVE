@@ -25,7 +25,7 @@ const categorias = ['todos', 'roupas', 'eletrodomésticos', 'eletrônicos']
   margin-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centraliza horizontalmente */
+  justify-content: center;
   gap: 10px;
   padding-bottom: 10px;
 }
@@ -49,7 +49,7 @@ button.active {
 @media (max-width: 600px) {
   .filters {
     justify-content: center; /* Mantém centralizado no celular */
-  }
+  };
 
   button {
     font-size: 13px;

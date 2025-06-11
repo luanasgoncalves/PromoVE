@@ -11,6 +11,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import PromoCard from './PromoCard.vue'
+import axios from 'axios';
 
 const props = defineProps({
   categoria: String
@@ -20,17 +21,15 @@ const allPromos = ref([])
 
 const fetchPromos = async () => {
   try {
-    const res = await fetch('http://localhost:3001/promos')
-    if (!res.ok) throw new Error('Erro na requisição')
-    const data = await res.json()
-    allPromos.value = data
+    const res = await axios.get('http://localhost:3000/promos'); 
+    allPromos.value = res.data; 
   } catch (err) {
-    console.error('Erro ao buscar dados:', err)
+    console.error('Erro ao buscar dados:', err);
   }
 }
 
-
 onMounted(fetchPromos)
+
 const filteredPromos = computed(() => {
   if (!props.categoria || props.categoria === 'todos') return allPromos.value
   return allPromos.value.filter(p => p.categoria === props.categoria)
