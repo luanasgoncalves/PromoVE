@@ -3,8 +3,8 @@
     <router-link to="/login">Login</router-link>
     <router-link to="/">PromoVe</router-link>
     <router-link to="/cadastro">Cadastro</router-link>
+    <router-link></router-link>
   </div>
-  <router-view></router-view>
 </template>
 
 <script setup>
@@ -17,7 +17,7 @@ body, html {
   font-family: sans-serif;
   background: linear-gradient(135deg, #242424, #3f3d56);
 }
-/* Styles specific to App.vue (like the navigation bar) */
+
 #nav {
   display: flex;
   justify-content: center;

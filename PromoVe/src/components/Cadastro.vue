@@ -27,8 +27,10 @@ export default {
     async cadastrarUsuario() {
       const novoUsuario = {
         nome: this.nome,
+        sobrenome: this.sobrenome,
         email: this.email,
-        senha: this.senha
+        senha: this.senha,
+        cpf: this.cpf
       }
 
       try {
@@ -46,8 +48,11 @@ export default {
 
         alert('Usuário cadastrado com sucesso!')
         this.nome = ''
+        this.sobrenome = ''
         this.email = ''
         this.senha = ''
+        this.cpf = ''
+
       } catch (error) {
         alert('Erro: ' + error.message)
       }

@@ -48,7 +48,7 @@ button.active {
 
 @media (max-width: 600px) {
   .filters {
-    justify-content: center; /* Mantém centralizado no celular */
+    justify-content: center;
   };
 
   button {

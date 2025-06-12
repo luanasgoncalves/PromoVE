@@ -25,7 +25,6 @@ export default {
 
         if (usuarios.length > 0) {
           alert('Login realizado com sucesso!')
-          // localStorage.setItem("usuario", JSON.stringify(usuarios[0]))
         } else {
           alert('E-mail ou senha incorretos')
         }
