@@ -4,6 +4,8 @@
       v-for="promo in filteredPromos"
       :key="promo.id"
       :promo="promo"
+      @clickLoja="onclickloja"
+      @goLink="vaiProLink"
     />
   </div>
 </template>
@@ -11,7 +13,7 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import PromoCard from './PromoCard.vue'
-import axios from 'axios';
+import {fetchPromos, buscaPromoPorLoja} from '../servicos'
 
 const props = defineProps({
   categoria: String
@@ -19,21 +21,22 @@ const props = defineProps({
 
 const allPromos = ref([])
 
-const fetchPromos = async () => {
-  try {
-    const res = await axios.get('http://localhost:3000/promos'); 
-    allPromos.value = res.data; 
-  } catch (err) {
-    console.error('Erro ao buscar dados:', err);
-  }
-}
-
-onMounted(fetchPromos)
+onMounted(async ()=>{
+  allPromos.value=await fetchPromos()})
 
 const filteredPromos = computed(() => {
   if (!props.categoria || props.categoria === 'todos') return allPromos.value
   return allPromos.value.filter(p => p.categoria === props.categoria)
 })
+
+
+async function onclickloja(loja) {
+  allPromos.value=await buscaPromoPorLoja(loja)
+}
+
+function vaiProLink(link) {
+  window.open(link, '_blank')
+}
 </script>
 
 <style scoped>

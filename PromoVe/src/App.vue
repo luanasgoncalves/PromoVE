@@ -3,8 +3,8 @@
     <router-link to="/login">Login</router-link>
     <router-link to="/">PromoVe</router-link>
     <router-link to="/cadastro">Cadastro</router-link>
-    <router-link></router-link>
   </div>
+  <router-view/>
 </template>
 
 <script setup>

@@ -1,12 +1,12 @@
 <template>
-  <div class="promo-card" @click="goToLink">
-    <img :src="promo.imagem" alt="Produto" />
+  <div class="promo-card">
+    <img :src="promo.imagem" alt="Produto" @click="goToLink"/>
     <h3>{{ promo.nomeProduto }}</h3>
     <p class="preco">
-      <span class="new">R$ {{ promo.preco }}</span>
-      <span class="old">R$ {{ promo.precoAntigo }}</span>
+      <span class="new">R$ {{ promo.preco.toFixed(2) }}</span>
+      <span class="old">R$ {{ promo.precoAntigo.toFixed(2) }}</span>
     </p>
-    <p class="loja">{{ promo.loja }}</p>
+    <p class="loja" @click="clickLoja(promo.loja)">{{ promo.loja }}</p>
   </div>
 </template>
 
@@ -14,9 +14,13 @@
 const props = defineProps({
   promo: Object
 })
-
+const emit = defineEmits(['clickLoja', 'goLink'])
 function goToLink() {
-  window.open(props.promo.link, '_blank')
+  emit("goLink", props.promo.link)
+}
+
+function clickLoja(loja) {
+  emit("clickLoja", loja);
 }
 </script>
 
