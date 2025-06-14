@@ -1,7 +1,7 @@
 <template>
   <div class="promo-card">
-    <img :src="promo.imagem" alt="Produto" @click="goToLink"/>
-    <h3>{{ promo.nomeProduto }}</h3>
+    <img :src="promo.imagem" alt="Produto" @click="goToCategoria" />
+    <h3 @click="goToLink">{{ promo.nomeProduto }}</h3>
     <p class="preco">
       <span class="new">R$ {{ promo.preco.toFixed(2) }}</span>
       <span class="old">R$ {{ promo.precoAntigo.toFixed(2) }}</span>
@@ -21,6 +21,10 @@ function goToLink() {
 
 function clickLoja(loja) {
   emit("clickLoja", loja);
+}
+
+function goToCategoria() {
+  emit("clickCategoria", props.promo.categoria);
 }
 </script>
 
@@ -63,5 +67,18 @@ img {
 .loja {
   font-size: 0.9em;
   color: #777;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+h3 {
+  cursor: pointer;
+  color: #777;
+  text-decoration: underline;
+}
+h3:hover,
+.loja:hover {
+  transform: scale(1.05);
+  color: #3a3a3a;
+  font-weight: bold;
 }
 </style>

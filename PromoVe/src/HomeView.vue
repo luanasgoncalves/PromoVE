@@ -2,7 +2,7 @@
   <div class="app">
     <h1>PromoVe</h1>
     <CategoryFilter :categoriaSelecionada="categoriaSelecionada" @update="setCategory" />
-    <PromoList :categoria="categoriaSelecionada" />
+    <PromoList :categoria="categoriaSelecionada" @updateCategoria="setCategory" />
   </div>
 </template>
 

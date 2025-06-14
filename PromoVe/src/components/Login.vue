@@ -25,6 +25,7 @@ export default {
 
         if (usuarios.length > 0) {
           alert('Login realizado com sucesso!')
+          this.$router.push('/')
         } else {
           alert('E-mail ou senha incorretos')
         }

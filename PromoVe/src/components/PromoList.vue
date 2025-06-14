@@ -1,12 +1,14 @@
 <template>
   <div class="promo-list">
-    <PromoCard
-      v-for="promo in filteredPromos"
-      :key="promo.id"
-      :promo="promo"
-      @clickLoja="onclickloja"
-      @goLink="vaiProLink"
-    />
+  <PromoCard
+  v-for="promo in exibidosPromos"
+  :key="promo.id"
+  :promo="promo"
+  @clickLoja="onclickloja"
+  @goLink="vaiProLink"
+  @clickCategoria="onclickCategoria"/>
+
+
   </div>
 </template>
 
@@ -19,23 +21,44 @@ const props = defineProps({
   categoria: String
 })
 
+async function carregarTodos() {
+  const promos = await fetchPromos()
+  allPromos.value = promos
+  exibidosPromos.value = promos
+}
+
 const allPromos = ref([])
+const exibidosPromos = ref([])
 
-onMounted(async ()=>{
-  allPromos.value=await fetchPromos()})
+onMounted(async () => {
+  const promos = await fetchPromos()
+  allPromos.value = promos
+  exibidosPromos.value = promos
+  await carregarTodos()
+})
 
-const filteredPromos = computed(() => {
-  if (!props.categoria || props.categoria === 'todos') return allPromos.value
-  return allPromos.value.filter(p => p.categoria === props.categoria)
+watch(() => props.categoria, async (novaCategoria) => {
+  if (!novaCategoria || novaCategoria === 'todos') {
+    await carregarTodos()
+  } else {
+    exibidosPromos.value = allPromos.value.filter(p => p.categoria === novaCategoria)
+  }
 })
 
 
 async function onclickloja(loja) {
-  allPromos.value=await buscaPromoPorLoja(loja)
+  const resultados = await buscaPromoPorLoja(loja)
+  exibidosPromos.value = resultados
 }
 
 function vaiProLink(link) {
   window.open(link, '_blank')
+}
+
+const emit = defineEmits(['updateCategoria'])
+
+function onclickCategoria(categoria) {
+  emit('updateCategoria', categoria)
 }
 </script>
 

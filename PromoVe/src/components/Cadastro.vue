@@ -4,7 +4,8 @@
       <h2>Cadastre-se</h2>
       <input v-model="nome" type="text" placeholder="Nome" required />
       <input v-model="sobrenome" type="text" placeholder="Sobrenome" required />
-      <input v-model="cpf" type="text" placeholder="Digite seu CPF (somente números)" pattern="\d{11}" maxlength="11" required />
+      <input v-model="cpf" type="text" placeholder="Digite seu CPF (somente números)" pattern="\d{11}" maxlength="11"
+        required />
       <input v-model="email" type="email" placeholder="E-mail" required />
       <input v-model="senha" type="password" placeholder="Senha" required />
       <button type="submit">Cadastrar</button>
@@ -16,11 +17,11 @@
 export default {
   data() {
     return {
-    nome: '',
-    sobrenome: '',
-    cpf: '',
-    email: '',
-    senha: ''
+      nome: '',
+      sobrenome: '',
+      cpf: '',
+      email: '',
+      senha: ''
     }
   },
   methods: {
@@ -47,6 +48,7 @@ export default {
         }
 
         alert('Usuário cadastrado com sucesso!')
+        this.$router.push('/')
         this.nome = ''
         this.sobrenome = ''
         this.email = ''
@@ -57,6 +59,7 @@ export default {
         alert('Erro: ' + error.message)
       }
     }
+
   }
 }
 </script>
